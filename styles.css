@@ -90,7 +90,7 @@ h5{
 }
 
 #carouselExample2{
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background-color: rgb(138, 138, 68);
 }
@@ -306,9 +306,9 @@ th{
     background-color: gray;
 }
 
-#mainStats{
+.mainStats{
     margin-bottom: 1rem;
-    margin: 1rem;
+    padding: 1rem;
 }
 
 
