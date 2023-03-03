@@ -109,7 +109,7 @@ h5{
     width: 100%;
     height: 100%;
     background-image: url(./imagenes/Cine7.jpg);
-    background-size: 30%;
+    background-size: 50%;
     text-align: center;
     vertical-align: center;
     /* display: flex;
@@ -233,8 +233,8 @@ a{
 
 #cohort44-45{
     width: 10vw;
-    height: 5vh;
-    margin-top: 3rem; 
+    height: 3vh;
+    margin-top: 1rem; 
     /* padding: 1rem; */
     text-align: center;
 }
@@ -311,6 +311,89 @@ th{
     padding: 1rem;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 424px) {
+    #buttonNav1,
+    #buttonNav2,
+    #buttonNav3,
+    #buttonNav4,
+    #buttonNav5{
+        background-color: white;
+        border: 1px solid gray;
+        align-content: center;
+        width: 50%;
+        height: 2%;
+    } 
+
+    #navbarVarId{
+        margin-right: 3rem;
+    }
+
+    #txtName, 
+    #txtEmail,
+    #txtMessage{
+        width: 100%;
+    }
+
+    li{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ChecksYBusqueda{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .searchAndTxt{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        width:100%;
+        flex-wrap: wrap;
+    }
+    .ChecksYBusqueda2{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        width:100%;
+        flex-wrap: wrap;
+    } 
+
+    #formularioContacto{
+        width:90%;
+    }
+
+    #botonBuscarTxt{
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    /* div{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    } */
+
+    #cohort44-45{
+        width: 30vw;
+        height: 8vh;
+    }
+
+    #navbarNavAltMarkup{
+        margin-bottom: 1rem;
+    }
+
+    label, a{
+        font-size: small;
+    }
+
+    #carouselExample{
+        padding: 5px;
+    }
+}
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
 
@@ -380,9 +463,8 @@ th{
     } */
 
     #cohort44-45{
-        width: 20vw;
-        height: 9vh;
-        margin-top: 9px;
+        width: 30vw;
+        height: 7.5vh;
     }
 
     #navbarNavAltMarkup{
