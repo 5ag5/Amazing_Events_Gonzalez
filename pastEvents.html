@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./imagenes/Logo_Nuevo.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+
+      <nav class="navbar navbar-expand-lg bg-black p-0" >
+        <div class="container-fluid" id="navContainer1">
+          <img src="./imagenes/Logo Amazing Events.png" alt="Logo-Company" class="logoCompany">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="nav-item d-flex justify-content-center" id="buttonNav1"> 
+                <a class="nav-link active p-0 fs-6" aria-current="page" href="index.html" id="a1">Home</a>
+              </div>
+              <div class="nav-item d-flex justify-content-center " id="buttonNav2">
+                <a class="nav-link p-0 fs-6" href="UpcomingEvents.html">Upcoming Events</a>
+              </div>
+              <div class="nav-item d-flex justify-content-center" id="buttonNav3">
+                <a class="nav-link p-0 fs-6" href="pastEvents.html">Past Events</a>
+              </div>
+              <div class="nav-item d-flex justify-content-center" id="buttonNav4">
+                <a class="nav-link p-0 fs-6" href="contactUS.html">contact</a>
+              </div>
+              <div class="nav-item d-flex justify-content-center" id="buttonNav5">
+                <a class="nav-link p-0 fs-6" href="stats.html">stats</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner" id="carouselExample2">
+          <div class="carousel-item active carrouselImg1 ">
+            <!-- <img src="./imagenes/books.jpg" class=" w-100" alt="booksC" id="bibliotecaIMG"> -->
+            <h2 id="tiuloPagina">Past Events</h2>
+          </div>
+          <div class="carousel-item carrouselImg2">
+            <!-- <img src="./imagenes/Cine7.jpg" class=" w-100" alt="cineC" id="idCine"> -->
+            <h2 id="tiuloPagina">Past Events</h2>
+          </div>
+          <div class="carousel-item carrouselImg3">
+            <!-- <img src="./imagenes/Concierto de musica1.jpg" class="d-block w-100" alt="conciertoC" id="conciertImg"> -->
+            <h2 id="tiuloPagina">Past Events</h2>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+  <main class="bg-light p-0">
+    <div class="ChecksYBusqueda">
+      <div class="ChecksYBusqueda2" id="checksID3">
+        <!-- <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Viajes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Conciertos
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Culturales
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Cine
+          </label> -->
+        <!-- </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Deportes
+          </label>
+        </div> -->
+      </div>
+        <div class="searchAndTxt">
+          <input type="text" id="textSearch" name="">
+            <a href="#" id="botonBuscarTxt2"><img src="./imagenes/incono_buscar.png" alt="icono-buscar" id="botonBuscarTxt"></a>
+        </div>
+    </div>
+        <div class="contenedorCardsHome" id="contenedorCartas">
+        <div class="card mb-3" style="max-width: 100%;" id="cardMarathon">
+            <div class="row g-0" id="contenedorCard">
+              <div class="col-md-4" id="fotoCard">
+                <img src="./imagenes/Maraton3.jpg" class="img-fluid rounded-start" alt="..." id="imgMaraton">
+              </div>
+              <div class="col-md-8" id="textCard">
+                <div class="card-body" id="divCardBody">
+                  <h5 class="card-title">Media Maraton de Bogota</h5>
+                  <p class="card-text">La Media Marathon de Bogota, se corrio el dia 06 de Febrero del 2023. Que se corrio por 22Km.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+  </main>
+    <footer>
+        <div class="divLogos">
+          <img src="./imagenes/instagram.png" alt="instagram-logo">
+          <img src="./imagenes/facebookLogo.png" alt="facebook-logo">
+          <img src="./imagenes/whatsApp.png" alt="whatsApp-logo">
+        </div>
+        <h5 id="cohort44-45">Cohort 44/45</h5>
+      </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="./JSFiles/datos.js"></script>
+  <script src="./JSFiles/PastEvents.js"></script>
+</body>
+</html>
