@@ -1,6 +1,8 @@
 const url = 'https://mindhub-xj03.onrender.com/api/amazing'
 const $contEstadisticas = document.getElementById('contenedorEstadisticas');
 const $contenedorUpcoming = document.getElementById('contenedorUpcoming');
+const $contenedorFuturo = document.getElementById('contenedorUpcoming')
+const $contenedorPasado = document.getElementById('contenedorPast')
 
 fetch(url)
             .then(elemento => {
@@ -9,13 +11,9 @@ fetch(url)
             .then(datos => {
             const datosCards = datos.events
             const fechaActual = datos.currentDate
-            //console.log(datosCards)
-            // console.log(fechaActual)
             
             const cardsPasado = filtrarEventosPasado(datosCards, fechaActual)
             const cardsFuturo = filtrarEventosFuturo(datosCards, fechaActual)
-            //console.log(cardsPasado)
-            // console.log(cardsFuturo)
             
             const eventoMasAtendido = eventoPorcentajeMasAtendido(cardsPasado)
             const eventoMenosAtendido = eventoPorcentajeMenosAtendido(cardsPasado)
@@ -28,18 +26,17 @@ fetch(url)
 
             crearElementos(eventosEstadisticas, $contEstadisticas)
 
-            const UpcomingEstadisticas = filtroCategoriaEvento(cardsPasado)
-            const revenuesEstadisticas = RevenuesEventos(cardsPasado)
-            const percentageAcceptance = porcentajeDeAsistencia(cardsPasado)
+            const UpcomingEstadisticas = filtroCategoriaEvento(cardsFuturo)
+            const PastEstadisticas = filtroCategoriaEvento(cardsPasado)
             
-            // console.log(UpcomingEstadisticas)
-            // console.log(revenuesEstadisticas)
-            // console.log(percentageAcceptance)
-            
-            for(let categoria of UpcomingEstadisticas){
+            for(let categoria of PastEstadisticas){
                 const arregloObjetosNuevo = construirArregloDeObjetos(cardsPasado,categoria)
-                console.log(arregloObjetosNuevo)
-                crearElementos(arregloObjetosNuevo,$contenedorUpcoming)
+                crearElementoFutureYPasado(arregloObjetosNuevo,$contenedorPasado)
+            }
+
+            for(let categoria of UpcomingEstadisticas ){
+                const arregloObjetosNuevo1 = construirArregloDeObjetosFuturo(cardsFuturo, categoria)
+                crearElementoFutureYPasado(arregloObjetosNuevo1,$contenedorFuturo)
             }
 
         })
@@ -89,12 +86,10 @@ function eventoConMasCapacidad(cardsPasado){
 
 function crearElementos(lista, contenedor){
     let plantilla = ''
-    console.log(lista)
     for(let i = 0; i < lista.length; i++){
         plantilla += pintarElementos(lista[i])
     }
 
-    console.log(plantilla)
     contenedor.innerHTML = plantilla
 }
 
@@ -102,31 +97,27 @@ function pintarElementos(evento){
 return `<td>${evento.name}</td>`
 }
 
+function crearElementoFutureYPasado(lista, contenedor){
+    let plantilla = ''
+    for(let i =0; i < lista.length;i++){
+        plantilla += pintarFilaFuturoyPasado(lista[i]);
+    }
+    
+    contenedor.innerHTML += plantilla;
+}
+
+function pintarFilaFuturoyPasado(evento){
+    return `<tr>
+    <td>${evento.Category}</td>
+    <td>$${evento.Revenues}</td>
+    <td>%${evento.Attendance}</td>
+    </tr>`
+}
+
 function filtroCategoriaEvento(lista){
     const listaFiltrada = lista.map(elemento => elemento.category)
     const listaFiltradaFinal = Array.from(new Set(listaFiltrada))
     return listaFiltradaFinal
-}
-
-function RevenuesEventos(lista){
-    const listaFitlrada = lista.map(elemento => elemento.assistance * elemento.price)
-    let suma =0
-
-    for(let elemento of listaFitlrada){
-        suma += elemento
-    }
-    return suma
-}
-
-function porcentajeDeAsistencia(lista){
-    const listaFiltrada = lista.map(elmento => (elmento.assistance/elmento.capacity))
-    let suma =0
-    let resultado =0
-    for(let elemento of listaFiltrada){
-        suma += elemento
-        resultado = suma/lista.length
-    }
-    return resultado
 }
 
 function construirArregloDeObjetos(lista, categoria){
@@ -145,6 +136,7 @@ function construirArregloDeObjetos(lista, categoria){
         })
     }
 
+
     for(let elemento of listaObjetos){
         suma1 = elemento.Category
         suma2 += elemento.Revenues
@@ -154,7 +146,38 @@ function construirArregloDeObjetos(lista, categoria){
     sumaResultados.push({
         Category: suma1,
         Revenues: suma2,
-        Attendance: suma3/listaObjetos.length,
+        Attendance: (Math.round((suma3/listaObjetos.length)*100)/100)*100,
+    })
+    
+    return sumaResultados
+}
+
+function construirArregloDeObjetosFuturo(lista, categoria){
+    const nuevaLista = lista.filter( elemento => elemento.category.includes(categoria))
+    const listaObjetos = []
+    const sumaResultados = []
+    let suma1 =0
+    let suma2 =0
+    let suma3 =0
+    
+    for(let elemento of nuevaLista){
+        listaObjetos.push({
+            Category: elemento.category,
+            Revenues: elemento.estimate * elemento.price,
+            Attendance: elemento.estimate/elemento.capacity,
+        })
+    }
+
+    for(let elemento of listaObjetos){
+        suma1 = elemento.Category
+        suma2 += elemento.Revenues
+        suma3 += elemento.Attendance
+    }
+
+    sumaResultados.push({
+        Category: suma1,
+        Revenues: suma2,
+        Attendance: (Math.round((suma3/listaObjetos.length)*100)/100)*100,
     })
     
     return sumaResultados

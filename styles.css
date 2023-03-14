@@ -319,7 +319,17 @@ th{
     color : blue
 }
 
+table{
+    font-family: 'Times New Roman', Times, serif;
+}
 
+#titleTable{
+    font-weight: bold;
+}
+
+.img-fluid{
+    object-fit: cover;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 424px) {
     #buttonNav1,

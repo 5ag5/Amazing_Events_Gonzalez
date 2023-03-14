@@ -26,14 +26,14 @@ function crearCarta(elemento) {
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Name: ${elemento.name}</h5>
-            <h5 class="card-text">Date: ${elemento.date}</h5>
-            <h5 class="card-text">Description:${elemento.description}.</h5>
-            <h5 class="card-text">Category:${elemento.category}</h5>
-            <h5 class="card-text">Place: ${elemento.place}</h5>
-            <h5 class="card-text">Capacity: ${elemento.capacity}</h5>
-            <h5 class="card-text">${elemento.assistance ?'Assistance: '+ elemento.assistance: 'Estimate: '+elemento.estimate}</h5>
-            <h5 class="card-text">Price: $${elemento.price}</h5>
+            <h6 class="card-title">Name: ${elemento.name}</h6>
+            <h6 class="card-text">Date: ${elemento.date}</h6>
+            <h6 class="card-text">Description:${elemento.description}.</h6>
+            <h6 class="card-text">Category:${elemento.category}</h6>
+            <h6 class="card-text">Place: ${elemento.place}</h6>
+            <h6 class="card-text">Capacity: ${elemento.capacity}</h6>
+            <h6 class="card-text">${elemento.assistance ?'Assistance: '+ elemento.assistance: 'Estimate: '+elemento.estimate}</h6>
+            <h6 class="card-text">Price: $${elemento.price}</h6>
           </div>
         </div>
       </div>
