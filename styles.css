@@ -7,7 +7,7 @@ header{
     min-height: 40vh;
 }
 
- main{
+main{
     min-height: 55vh;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ footer{
     min-height: 5vh;
     display: flex;
     flex-direction: row;
-    background-color: bisque;
+    background-color: rgb(203, 50, 143);
     align-items: center;
 }
 
@@ -58,9 +58,10 @@ h5{
 }
 
 #navbarNavAltMarkup{
-    display: flex;
-    justify-content: center;
-}
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-left: 40%; */
+} 
 
 #navContainer1{
     min-height: 7vh;
@@ -90,7 +91,7 @@ h5{
 }
 
 #carouselExample2{
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background-color: rgb(138, 138, 68);
 }
@@ -108,10 +109,11 @@ h5{
 .carrouselImg1{
     width: 100%;
     height: 100%;
-    background-image: url(./imagenes/Cine7.jpg);
-    background-size: 30%;
+    background-image: url(./imagenes/pexels-photo-7991579.webp);
+    background-size: 100%;
     text-align: center;
     vertical-align: center;
+    background-position: 40%;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -121,17 +123,19 @@ h5{
 .carrouselImg2{
     width: 100%;
     height: 100%;
-    background-image: url(./imagenes/Feria\ de\ comidas7.jpg);
-    background-size: 30%;
+    background-image: url(./imagenes/pexels-photo-food_fair.jpeg);
+    background-size: 100%;
+    background-position: 40%;
     text-align: center;
-    vertical-align: center;
+    vertical-align: center; 
 }
 
 .carrouselImg3{
     width: 100%;
     height: 100%;
-    background-image: url(./imagenes/Concierto\ de\ musica1.jpg);
-    background-size: 30%;
+    background-image: url(./imagenes/pexels-photo-concert.jpeg);
+    background-size: 100%;
+    background-position: 10%;
     text-align: center;
     vertical-align: center;
     /* display: flex;
@@ -233,8 +237,8 @@ a{
 
 #cohort44-45{
     width: 10vw;
-    height: 5vh;
-    margin-top: 3rem; 
+    height: 3vh;
+    margin-top: 1rem; 
     /* padding: 1rem; */
     text-align: center;
 }
@@ -276,7 +280,7 @@ a{
     width: 50rem;
 }
 label{
-    font-size: larger;
+    font-size: medium;
 }
 
 #cardPastEvents{
@@ -306,11 +310,104 @@ th{
     background-color: gray;
 }
 
-#mainStats{
+.mainStats{
     margin-bottom: 1rem;
-    margin: 1rem;
+    padding: 1rem;
 }
 
+#botonContacto{
+    color : blue
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 424px) {
+    #buttonNav1,
+    #buttonNav2,
+    #buttonNav3,
+    #buttonNav4,
+    #buttonNav5{
+        background-color: white;
+        border: 1px solid gray;
+        align-content: center;
+        width: 50%;
+        height: 2%;
+    } 
+
+    #navbarVarId{
+        margin-right: 3rem;
+    }
+
+    #navbarNavAltMarkup{
+        margin-left: 30%;
+    }
+
+    #txtName, 
+    #txtEmail,
+    #txtMessage{
+        width: 100%;
+    }
+
+    li{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ChecksYBusqueda{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .searchAndTxt{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        width:100%;
+        flex-wrap: wrap;
+    }
+    .ChecksYBusqueda2{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        width:100%;
+        flex-wrap: wrap;
+    } 
+
+    #formularioContacto{
+        width:90%;
+    }
+
+    #botonBuscarTxt{
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    /* div{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    } */
+
+    #cohort44-45{
+        width: 30vw;
+        height: 8vh;
+    }
+
+    #navbarNavAltMarkup{
+        margin-bottom: 1rem;
+    }
+
+    label, a{
+        font-size: small;
+    }
+
+    #carouselExample{
+        padding: 5px;
+    }
+}
 
 @media only screen and (min-width: 425px) and (max-width: 767px) {
 
@@ -325,6 +422,10 @@ th{
         width: 60%;
         height: 2%;
     } 
+
+    #navbarNavAltMarkup{
+        margin-left: 30%;
+    }
 
     #navbarVarId{
         margin-right: 3rem;
@@ -380,9 +481,8 @@ th{
     } */
 
     #cohort44-45{
-        width: 20vw;
-        height: 9vh;
-        margin-top: 9px;
+        width: 30vw;
+        height: 7.5vh;
     }
 
     #navbarNavAltMarkup{
@@ -395,6 +495,10 @@ th{
     li{
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
+    }
+
+    #navbarNavAltMarkup{
+        margin-left: 40%;
     }
 
     /* div{
@@ -474,6 +578,7 @@ th{
         margin-top: 1rem;
         margin-bottom: 1rem;
     } */
+
 
     #buttonNav1,
     #buttonNav2,
